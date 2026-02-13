@@ -35,5 +35,19 @@ find . -name "*.html" -type f -exec sed -i '' '1i\
 find . -name "*.html" -print0 | xargs -P 48 -0 -I {} sh -c 'html-to-markdown "$1" > "${1%.html}.md" && rm "$1"' sh {}
 ```
 
+# Linux
+
+Ensure Python 3 is installed, and continue from step 3 of the MacOS steps.
+
+# Using `pipx`
+
+As an alternative to using a virtual environment, the pipx tool can be used to make `html-to-markdown` available globally.
+Follow your system's [installation steps](https://github.com/pypa/pipx?tab=readme-ov-file#install-pipx) then run:
+
+```sh
+pipx install html-to-markdown
+```
+
+Now the script can be run without a venv. 
 
 All credits for the script go to @danferns
